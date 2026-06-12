@@ -14,7 +14,7 @@ A lead marketplace for WordPress, built as a custom plugin: tradespeople (provid
 
 ## Architecture
 
-\`\`\`
+'''
 marketplace-leads/
 ├── marketplace-leads.php        # Bootstrap: constants, autoloader, lifecycle hooks
 ├── uninstall.php                # Teardown on delete (drops table, removes role/options)
@@ -32,7 +32,7 @@ marketplace-leads/
         ├── AdminMenu.php        # Top-level menu wiring
         ├── Settings.php         # Settings API (unlock cost, starter credits)
         └── ProvidersPage.php    # Approve/reject UI (nonce + capability protected)
-\`\`\`
+'''
 
 The design keeps each concern isolated: `RestController` never touches the database directly — it goes through `CreditLedger` and `ProviderManager`, which own their own data. Authorization is expressed as **capabilities** (`ml_unlock_leads`) rather than role-name string checks, so it stays explicit and easy to reason about.
 
