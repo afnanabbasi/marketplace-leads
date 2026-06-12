@@ -1,0 +1,20 @@
+{
+    "name": "afnanabbasi/marketplace-leads",
+    "description": "A standalone demonstrator: a lead marketplace for WordPress with role-based provider registration, an admin approval workflow, a credit ledger, and a curated REST API.",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Afnan Abbasi",
+            "homepage": "https://afnanabbasi.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "AfnanAbbasi\\MarketplaceLeads\\": "src/"
+        }
+    }
+}
