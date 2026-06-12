@@ -63,25 +63,25 @@ Base: `/wp-json/marketplace-leads/v1`
 
 List leads:
 
-\`\`\`bash
+```bash
 curl https://example.com/wp-json/marketplace-leads/v1/leads
-\`\`\`
+```
 
 Register as a provider (cookie-authenticated request with a REST nonce):
 
-\`\`\`bash
+```bash
 curl -X POST https://example.com/wp-json/marketplace-leads/v1/providers/register \
   -H "X-WP-Nonce: <wp_rest_nonce>" --cookie "<wp_auth_cookies>"
-\`\`\`
+```
 
 Unlock a lead:
 
-\`\`\`bash
+```bash
 curl -X POST https://example.com/wp-json/marketplace-leads/v1/leads/42/unlock \
   -H "X-WP-Nonce: <wp_rest_nonce>" --cookie "<wp_auth_cookies>"
 # 200 -> { "lead_id": 42, "contact": { "email": "...", "phone": "..." }, "charged": 5, "balance": 15 }
 # 402 -> { "code": "ml_insufficient_credits", "data": { "status": 402, "balance": 2, "cost": 5 } }
-\`\`\`
+```
 
 ## Installation
 
